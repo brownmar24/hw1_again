@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.SurfaceView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -15,16 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
 
-        //initial colorVals
-        //redVal_textView
+        //TextViews
         TextView redVal_textView = findViewById(R.id.redVal_textView);
-
-        //greenVal_textView
         TextView greenVal_textView = findViewById(R.id.greenVal_textView);
-
-        //blueVal_textView
         TextView blueVal_textView = findViewById(R.id.blueVal_textView);
-
+        TextView currElm_textView = findViewById(R.id.current_element_textView);
 
 
 
@@ -32,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         //set houseView to the surfaceView & set houseController to that houseView
         houseView hv = findViewById(R.id.houseView);
-        houseController hc = new houseController(hv, redVal_textView);
+        houseController hc = new houseController(hv, redVal_textView, greenVal_textView, blueVal_textView, currElm_textView);
 
 
 
@@ -40,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         //get colorVals from houseModel
-        int tempRed = hv.getHouseModel().testRed;
-        int tempGreen = hv.getHouseModel().testGreen;
-        int tempBlue = hv.getHouseModel().testBlue;
+        int tempRed = hv.getHouseModel().testRed1;
+        int tempGreen = hv.getHouseModel().testGreen1;
+        int tempBlue = hv.getHouseModel().testBlue1;
 
         //seekBars
         //redVal_seekBar
@@ -57,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
         SeekBar blueVal_seekBar = findViewById(R.id.blueVal_seekBar);
         blueVal_seekBar.setOnSeekBarChangeListener(hc);
         blueVal_seekBar.setProgress(tempBlue);
+
+        //Touch Event
+        //howwwww
 
 
     }

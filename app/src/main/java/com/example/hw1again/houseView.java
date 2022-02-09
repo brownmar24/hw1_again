@@ -22,6 +22,20 @@ public class houseView extends SurfaceView{
     Paint skyPaint = new Paint();
     Paint grassPaint = new Paint();
 
+    //Colors
+    int testColor1;
+    int testColor2;
+    int houseColor;
+    int roofColor;
+    int doorColor;
+    int chimneyColor;
+    int skyColor;
+    int grassColor;
+
+    //objects
+    CustomCircle testCircle1;
+    CustomCircle testCircle2;
+
 
     public houseView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -40,32 +54,28 @@ public class houseView extends SurfaceView{
     }
 
     private void updateColors() {
-        /*update all Colors
-         * 1 create an int for color
-         * 2 put color into paint
-        */
-        //testColor
-        int testColor = Color.rgb(hm.testRed, hm.testGreen, hm.testBlue);
-        testPaint.setColor(testColor);
-        //houseColor
-        int houseColor = Color.rgb(hm.houseRed, hm.houseGreen, hm.houseBlue);
-        housePaint.setColor(houseColor);
-        //doorColor
-        int doorColor = Color.rgb(hm.doorRed, hm.doorGreen, hm.doorBlue);
-        doorPaint.setColor(doorColor);
-        //roofColor
+        //update all Colors
+        testColor1 = Color.rgb(hm.testRed1, hm.testGreen1, hm.testBlue1);
+        testColor2 = Color.rgb(hm.testRed2, hm.testGreen2, hm.testBlue2);
+        houseColor = Color.rgb(hm.houseRed, hm.houseGreen, hm.houseBlue);
+        doorColor = Color.rgb(hm.doorRed, hm.doorGreen, hm.doorBlue);
+        roofColor = Color.rgb(hm.roofRed, hm.roofGreen, hm.roofBlue);
+        chimneyColor = Color.rgb(hm.chimneyRed, hm.chimneyGreen, hm.chimneyBlue);
+        skyColor = Color.rgb(hm.skyRed, hm.skyGreen, hm.skyBlue);
+        grassColor = Color.rgb(hm.grassRed, hm.grassGreen, hm.grassBlue);
     }
 
 
 
     @Override
     public void onDraw(Canvas canvas) {
-        //update color
-            //1 create an int for color
-            int testColor = Color.rgb(hm.testRed, hm.testGreen, hm.testBlue);
-            //2 put color in paint
-            testPaint.setColor(testColor);
-        canvas.drawCircle(100, 100, 30, testPaint);
+        updateColors();
+
+        //draw objects
+        testCircle1 = new CustomCircle("testCircle1", testColor1, 150, 150, 100);
+        testCircle1.drawMe(canvas);
+        testCircle2 = new CustomCircle("testCircle1", testColor2, 300, 300, 50);
+        testCircle2.drawMe(canvas);
 
     }
 }

@@ -3,10 +3,15 @@ package com.example.hw1again;
 import android.graphics.Paint;
 
 public class houseModel {
-    //testColor
-    public int testRed = 100;
-    public int testGreen = 100;
-    public int testBlue = 100;
+    //testColor1
+    public int testRed1 = 100;
+    public int testGreen1 = 100;
+    public int testBlue1 = 100;
+
+    //testColor2
+    public int testRed2 = 150;
+    public int testGreen2 = 150;
+    public int testBlue2 = 150;
 
     //houseColor
     public int houseRed = 168;
@@ -37,6 +42,7 @@ public class houseModel {
     public int grassRed = 60;
     public int grassGreen = 133;
     public int grassBlue = 40;
+
 
     //last touched string
 }
