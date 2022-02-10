@@ -13,28 +13,11 @@ public class houseView extends SurfaceView{
     //instance variables
     private houseModel hm;
 
-    //paints
-    Paint testPaint = new Paint();
-    Paint housePaint = new Paint();
-    Paint doorPaint = new Paint();
-    Paint roofPaint = new Paint();
-    Paint chimneyPaint = new Paint();
-    Paint skyPaint = new Paint();
-    Paint grassPaint = new Paint();
-
-    //Colors
-    int testColor1;
-    int testColor2;
-    int houseColor;
-    int roofColor;
-    int doorColor;
-    int chimneyColor;
-    int skyColor;
-    int grassColor;
-
     //objects
     CustomCircle testCircle1;
     CustomCircle testCircle2;
+    CustomRect customHouse;
+    CustomRect customSky;
 
 
     public houseView(Context context, AttributeSet attrs) {
@@ -55,14 +38,14 @@ public class houseView extends SurfaceView{
 
     private void updateColors() {
         //update all Colors
-        testColor1 = Color.rgb(hm.testRed1, hm.testGreen1, hm.testBlue1);
-        testColor2 = Color.rgb(hm.testRed2, hm.testGreen2, hm.testBlue2);
-        houseColor = Color.rgb(hm.houseRed, hm.houseGreen, hm.houseBlue);
-        doorColor = Color.rgb(hm.doorRed, hm.doorGreen, hm.doorBlue);
-        roofColor = Color.rgb(hm.roofRed, hm.roofGreen, hm.roofBlue);
-        chimneyColor = Color.rgb(hm.chimneyRed, hm.chimneyGreen, hm.chimneyBlue);
-        skyColor = Color.rgb(hm.skyRed, hm.skyGreen, hm.skyBlue);
-        grassColor = Color.rgb(hm.grassRed, hm.grassGreen, hm.grassBlue);
+        hm.testColor1 = Color.rgb(hm.testRed1, hm.testGreen1, hm.testBlue1);
+        hm.testColor2 = Color.rgb(hm.testRed2, hm.testGreen2, hm.testBlue2);
+        hm.houseColor = Color.rgb(hm.houseRed, hm.houseGreen, hm.houseBlue);
+        hm.doorColor = Color.rgb(hm.doorRed, hm.doorGreen, hm.doorBlue);
+        hm.roofColor = Color.rgb(hm.roofRed, hm.roofGreen, hm.roofBlue);
+        hm.chimneyColor = Color.rgb(hm.chimneyRed, hm.chimneyGreen, hm.chimneyBlue);
+        hm.skyColor = Color.rgb(hm.skyRed, hm.skyGreen, hm.skyBlue);
+        hm.grassColor = Color.rgb(hm.grassRed, hm.grassGreen, hm.grassBlue);
     }
 
 
@@ -72,10 +55,14 @@ public class houseView extends SurfaceView{
         updateColors();
 
         //draw objects
-        testCircle1 = new CustomCircle("testCircle1", testColor1, 150, 150, 100);
-        testCircle1.drawMe(canvas);
-        testCircle2 = new CustomCircle("testCircle1", testColor2, 300, 300, 50);
-        testCircle2.drawMe(canvas);
+        testCircle1 = new CustomCircle("testCircle1", hm.testColor1, 150, 150, 100);
+        testCircle2 = new CustomCircle("testCircle1", hm.testColor2, 300, 300, 50);
+        customHouse = new CustomRect("customHouse", hm.houseColor, 500, 125, 600, 175);
+        customSky = new CustomRect("customSky", hm.skyColor, -1, -1, 2000, 500);
 
+        testCircle1.drawMe(canvas);
+        testCircle2.drawMe(canvas);
+        customHouse.drawMe(canvas);
+        customSky.drawMe(canvas);
     }
 }

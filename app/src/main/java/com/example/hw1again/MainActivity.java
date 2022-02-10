@@ -22,40 +22,36 @@ public class MainActivity extends AppCompatActivity {
         TextView blueVal_textView = findViewById(R.id.blueVal_textView);
         TextView currElm_textView = findViewById(R.id.current_element_textView);
 
-
+        //SeekBars
+        SeekBar redVal_SeekBar = findViewById(R.id.redVal_seekBar);
+        SeekBar greenVal_SeekBar = findViewById(R.id.greenVal_seekBar);
+        SeekBar blueVal_SeekBar = findViewById(R.id.blueVal_seekBar);
 
 
 
         //set houseView to the surfaceView & set houseController to that houseView
         houseView hv = findViewById(R.id.houseView);
-        houseController hc = new houseController(hv, redVal_textView, greenVal_textView, blueVal_textView, currElm_textView);
+        houseController hc = new houseController(hv, redVal_textView, greenVal_textView, blueVal_textView, currElm_textView, redVal_SeekBar,
+                greenVal_SeekBar, blueVal_SeekBar);
 
 
+        //register SeekBars
+        redVal_SeekBar.setOnSeekBarChangeListener(hc);
+        greenVal_SeekBar.setOnSeekBarChangeListener(hc);
+        blueVal_SeekBar.setOnSeekBarChangeListener(hc);
+
+        //set colorVal_TextView to SeekBar
+        int tempRed = 0;
+        int tempGreen = 0;
+        int tempBlue = 0;
+        redVal_SeekBar.setProgress(tempRed);
+        greenVal_SeekBar.setProgress(tempGreen);
+        blueVal_SeekBar.setProgress(tempBlue);
 
 
+        //register Touch
+        hv.setOnTouchListener(hc);
 
-
-        //get colorVals from houseModel
-        int tempRed = hv.getHouseModel().testRed1;
-        int tempGreen = hv.getHouseModel().testGreen1;
-        int tempBlue = hv.getHouseModel().testBlue1;
-
-        //seekBars
-        //redVal_seekBar
-        SeekBar redVal_seekBar = findViewById(R.id.redVal_seekBar);
-        redVal_seekBar.setOnSeekBarChangeListener(hc);
-        redVal_seekBar.setProgress(tempRed);
-        //greenVal_seekBar
-        SeekBar greenVal_seekBar = findViewById(R.id.greenVal_seekBar);
-        greenVal_seekBar.setOnSeekBarChangeListener(hc);
-        greenVal_seekBar.setProgress(tempGreen);
-        //blueVal_seekBar
-        SeekBar blueVal_seekBar = findViewById(R.id.blueVal_seekBar);
-        blueVal_seekBar.setOnSeekBarChangeListener(hc);
-        blueVal_seekBar.setProgress(tempBlue);
-
-        //Touch Event
-        //howwwww
 
 
     }
