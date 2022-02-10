@@ -60,10 +60,17 @@ public class houseController implements View.OnTouchListener, SeekBar.OnSeekBarC
         }
         else if (hv.customSky.containsPoint(x, y)) {
             currTV.setText("Sky");
-            hm.lastTouched = "House";
+            hm.lastTouched = "Sky";
             redSeek.setProgress(hm.skyRed);
             greenSeek.setProgress(hm.skyGreen);
             blueSeek.setProgress(hm.skyBlue);
+        }
+        else if (hv.customGrass.containsPoint(x,y)) {
+            currTV.setText("Grass");
+            hm.lastTouched = "Grass";
+            redSeek.setProgress(hm.grassRed);
+            greenSeek.setProgress(hm.grassGreen);
+            blueSeek.setProgress(hm.grassBlue);
         }
         return true;
     }

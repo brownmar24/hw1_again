@@ -18,6 +18,7 @@ public class houseView extends SurfaceView{
     CustomCircle testCircle2;
     CustomRect customHouse;
     CustomRect customSky;
+    CustomRect customGrass;
 
 
     public houseView(Context context, AttributeSet attrs) {
@@ -59,10 +60,12 @@ public class houseView extends SurfaceView{
         testCircle2 = new CustomCircle("testCircle1", hm.testColor2, 300, 300, 50);
         customHouse = new CustomRect("customHouse", hm.houseColor, 500, 125, 600, 175);
         customSky = new CustomRect("customSky", hm.skyColor, -1, -1, 2000, 500);
+        customGrass = new CustomRect("customGrass", hm.grassColor, 0, 500, 2000, 700);
 
         testCircle1.drawMe(canvas);
         testCircle2.drawMe(canvas);
         customHouse.drawMe(canvas);
         customSky.drawMe(canvas);
+        customGrass.drawMe(canvas);
     }
 }
