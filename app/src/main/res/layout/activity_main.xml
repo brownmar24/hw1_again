@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/master_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/current_element_textView"
+        android:id="@+id/element_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:layout_weight="0"
         android:gravity="center"
-        android:text="Current Element"
+        android:text="Select Element"
         android:textSize="20sp" />
 
-    <com.example.hw1again.houseView
-        android:id="@+id/houseView"
+    <com.example.hw1again.HouseView
+        android:id="@+id/houseView_surfaceView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="20" />
 
     <LinearLayout
-        android:id="@+id/seekBar_layout_1"
+        android:id="@+id/major_seekBar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -66,7 +67,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/seekBar_layout_2"
+            android:id="@+id/minor_seekBar_Layout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -78,9 +79,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:layout_weight="1"
-                android:progress="0"
                 android:max="255"
-                android:min="0" />
+                android:min="0"
+                android:progress="0" />
 
             <SeekBar
                 android:id="@+id/greenVal_seekBar"
@@ -88,9 +89,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:layout_weight="1"
-                android:progress="0"
                 android:max="255"
-                android:min="0" />
+                android:min="0"
+                android:progress="0" />
 
             <SeekBar
                 android:id="@+id/blueVal_seekBar"
@@ -98,9 +99,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:layout_weight="1"
-                android:progress="0"
                 android:max="255"
-                android:min="0" />
+                android:min="0"
+                android:progress="0" />
         </LinearLayout>
 
         <LinearLayout

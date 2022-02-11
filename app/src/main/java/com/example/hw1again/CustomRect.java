@@ -3,6 +3,16 @@ package com.example.hw1again;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 
+
+/**
+ External Citation
+ Date: 2/10/2022
+ Problem: I needed a way for my drawing elements to know their own location
+ Resource: Prof. Nuxoll
+ Solution: I used many methods but the contains point method was most useful
+ */
+
+
 /**
  * <!-- class CustomRect -->
  *
@@ -47,7 +57,7 @@ public class CustomRect extends CustomElement {
         Rect r = new Rect(left, top, right, bottom);
 
         return r.contains(x, y);
-    }//contaisPoint
+    }//containsPoint
 
 
     @Override

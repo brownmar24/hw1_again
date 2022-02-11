@@ -6,6 +6,16 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+
+/**
+ External Citation
+ Date: 2/10/2022
+ Problem: I needed a way for my drawing elements to know their own location
+ Resource: Prof. Nuxoll
+ Solution: I used this in order to use CustomRect (see CustomRect for further solution)
+ */
+
+
 /**
  * <!-- class CustomElement -->
  *
